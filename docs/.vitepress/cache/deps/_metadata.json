@@ -2,12 +2,12 @@
   "hash": "455b10db",
   "configHash": "ee99de79",
   "lockfileHash": "bf7fd0e2",
-  "browserHash": "db3d968c",
+  "browserHash": "4301d86a",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.25/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "b4d5de36",
+      "fileHash": "e6401bdf",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
@@ -19,7 +19,7 @@
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@14.0.0_vue@3.5.25/node_modules/@vueuse/core/dist/index.js",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "f0853248",
+      "fileHash": "213aa032",
       "needsInterop": false
     },
     "gsap": {
@@ -32,6 +32,18 @@
       "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/ScrollTrigger.js",
       "file": "gsap_ScrollTrigger.js",
       "fileHash": "75c8251d",
+      "needsInterop": false
+    },
+    "gsap/SplitText": {
+      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/SplitText.js",
+      "file": "gsap_SplitText.js",
+      "fileHash": "5d8ee845",
+      "needsInterop": false
+    },
+    "gsap/ScrambleTextPlugin": {
+      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/ScrambleTextPlugin.js",
+      "file": "gsap_ScrambleTextPlugin.js",
+      "fileHash": "123b4185",
       "needsInterop": false
     }
   },

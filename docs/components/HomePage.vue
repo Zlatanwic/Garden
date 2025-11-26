@@ -7,6 +7,7 @@ import SplitText from './SplitText.vue'
 import GlitchText from './GlitchText.vue'
 import LogoLoop from './LogoLoop.vue'
 import MagicBento from './MagicBento.vue'
+import ScrambleText from './ScrambleText.vue'
 
 // --- Data ---
 const techLogos = [
@@ -137,17 +138,40 @@ onMounted(() => {
         </div>
         
         <div class="intro-right intro-content">
-          <p>
-            i am a <span class="highlight">system programming</span> and <span class="highlight">ai research</span> enthusiast,
-             focusing on learning rCore and rebuilding C project with rust,and multifocus fusion.And I am also know something about block chain and web development.
-             Welcome to communicate with me!
+          <!-- <p>
+            I am a System Programming and AI Research enthusiast. 
+            My current focus is on rCore, rewriting C projects in Rust, and Multi-focus Image Fusion.
           </p>
           <p>
-            
+            I also have experience in blockchain and web development.
+             My ultimate goal is to specialize in Deep Learning Systems (MLSys).
           </p>
           <p>
-            I am still have a lot of things to learn so I aprreiate your guide.I dream of working on deeplearning system area.
+            I’m always eager to learn and improve—suggestions and mentorship are highly appreciated.
+             Feel free to connect!
+          </p> -->
+
+
+            <ScrambleText
+    :className="'m-[7vw] max-w-[800px] font-mono font-medium text-[clamp(14px,4vw,32px)] text-white'"
+    :radius="100"
+    :duration="1.2"
+    :speed="0.5"
+    scrambleChars=".:"
+  >
+          <p>
+            I am a System Programming and AI Research enthusiast. 
+            My current focus is on rCore, rewriting C projects in Rust, and Multi-focus Image Fusion.
           </p>
+          <p>
+            I also have experience in blockchain and web development.
+             My ultimate goal is to specialize in Deep Learning Systems (MLSys).
+          </p>
+          <p>
+            I’m always eager to learn and improve—suggestions and mentorship are highly appreciated.
+             Feel free to connect!
+          </p>
+  </ScrambleText>
         </div>
       </div>
     </section>
