@@ -7,7 +7,9 @@ date: 2025-11-26
 ## 基础定点表示法
 95% of the folks out
 there are completely
-clueless about floatingpoint." author="James Gosling, 1998-02-28"
+clueless about floatingpoint.
+
+ --James Gosling, 1998-02-28
 
 ### 我们可以用N bits来表示什么呢？
 + Unsigned integers: 0 to $2^N -1$
