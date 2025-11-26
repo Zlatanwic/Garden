@@ -30,6 +30,7 @@ export default defineConfig({
     ]
   },
   markdown: {
-    theme: 'one-dark-pro'
+    theme: 'one-dark-pro',
+    math: true
   }
 })
