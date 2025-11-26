@@ -105,8 +105,8 @@ onMounted(() => {
         <p class="hero-desc">Passionate about creating immersive digital experiences and interactive WebGL interfaces.</p>
         
         <div class="hero-ctas">
-          <a :href="withBase('/posts/')" class="btn btn-primary">View Projects</a>
-          <a href="https://github.com" target="_blank" class="btn btn-ghost">GitHub</a>
+          <a :href="withBase('/posts/')" class="btn btn-primary">View Blogs</a>
+          <a href="https://github.com/Zlatanwic" target="_blank" class="btn btn-ghost">GitHub</a>
         </div>
       </div>
       
