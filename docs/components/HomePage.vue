@@ -104,8 +104,8 @@ onMounted(() => {
           <SplitText text="Li Kuo" />
         </h1>
         
-        <p class="hero-subtitle">Frontend Developer & Designer</p>
-        <p class="hero-desc">Passionate about creating immersive digital experiences and interactive WebGL interfaces.</p>
+        <p class="hero-subtitle">System Programming & AI Researcher</p>
+        <p class="hero-desc">Dreaming about find a job in deeplearing system area.</p>
         
         <div class="hero-ctas">
           <a :href="withBase('/posts/')" class="btn btn-primary">View Blogs</a>
@@ -146,7 +146,7 @@ onMounted(() => {
             
           </p>
           <p>
-            I am still have a lot of things to learn so I aprreiate your guide.
+            I am still have a lot of things to learn so I aprreiate your guide.I dream of working on deeplearing system area.
           </p>
         </div>
       </div>
