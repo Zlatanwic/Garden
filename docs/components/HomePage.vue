@@ -10,7 +10,10 @@ import MagicBento from './MagicBento.vue'
 
 // --- Data ---
 const techLogos = [
-  { node: '<span style="font-size: 1.5rem; font-weight: bold;">Vue.js</span>', title: "Vue.js", href: "https://vuejs.org" },
+    { node: '<span style="font-size: 1.5rem; font-weight: bold;">Rust</span>', title: "Rust", href: "https://rust-lang.org" },
+    { node: '<span style="font-size: 1.5rem; font-weight: bold;">C</span>', title: "C", href: "https://rust-lang.org" },
+    { node: '<span style="font-size: 1.5rem; font-weight: bold;">C++</span>', title: "C++", href: "https://rust-lang.org" },
+    { node: '<span style="font-size: 1.5rem; font-weight: bold;">Vue.js</span>', title: "Vue.js", href: "https://vuejs.org" },
   { node: '<span style="font-size: 1.5rem; font-weight: bold;">Vite</span>', title: "Vite", href: "https://vitejs.dev" },
   { node: '<span style="font-size: 1.5rem; font-weight: bold;">TypeScript</span>', title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: '<span style="font-size: 1.5rem; font-weight: bold;">GSAP</span>', title: "GSAP", href: "https://greensock.com" },
@@ -135,7 +138,7 @@ onMounted(() => {
         
         <div class="intro-right intro-content">
           <p>
-            I am a <span class="highlight">passionate developer</span> based in Shanghai, focusing on building accessible, pixel-perfect user interfaces.
+            我是一个<span class="highlight">系统编程</span> 和<span class="highlight">人工智能研究</span>爱好者, focusing on building accessible, pixel-perfect user interfaces.
           </p>
           <p>
             Currently blending the power of <span class="highlight">Vue.js Ecosystem</span> with creative animations to bring static designs to life. 
