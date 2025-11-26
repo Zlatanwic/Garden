@@ -8,6 +8,7 @@ import GlitchText from './GlitchText.vue'
 import LogoLoop from './LogoLoop.vue'
 import MagicBento from './MagicBento.vue'
 import ScrambleText from './ScrambleText.vue'
+import RippleGrid from './RippleGrid.vue'
 
 // --- Data ---
 const techLogos = [
@@ -74,30 +75,28 @@ onMounted(() => {
   tl.from('.hero-overline', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' })
     .from('.hero-desc', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6')
     .from('.hero-ctas', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6')
-
-  // 2. Intro 文字逐行显示
-  gsap.from('.intro-content p', {
-    scrollTrigger: {
-      trigger: '.intro-section',
-      start: 'top 75%',
-      toggleActions: 'play none none reverse'
-    },
-    y: 40,
-    duration: 5,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  })
 })
 </script>
 
 <template>
   <div class="home-page-wrapper">
+    <!-- Background Layer -->
+    <div class="ripple-background">
+      <RippleGrid
+      :enable-rainbow="false"
+      grid-color="rgba(59,130,246,0.15)"
+      :ripple-intensity="0.05"
+      :grid-size="10"
+      :grid-thickness="15"
+      :mouse-interaction="true"
+      :mouse-interaction-radius="1.2"
+      :opacity="0.8"
+      />
+    </div>
+
     <div class="noise-overlay"></div>
 
     <section class="section hero-section">
-      <div class="hero-orb"></div>
-      
       <div class="container hero-container">
         <span class="hero-overline">HELLO WORLD</span>
         
@@ -122,7 +121,7 @@ onMounted(() => {
 
     <section class="section intro-section">
       <div class="container intro-grid">
-        <div class="intro-left">
+        <div class="intro-top">
           <div class="sticky-wrapper">
             <GlitchText
               children="Who Am I?"
@@ -133,45 +132,27 @@ onMounted(() => {
           </div>
         </div>
         
-        <div class="intro-divider">
-          <div class="divider-line"></div>
-        </div>
-        
-        <div class="intro-right intro-content">
-          <!-- <p>
-            I am a System Programming and AI Research enthusiast. 
-            My current focus is on rCore, rewriting C projects in Rust, and Multi-focus Image Fusion.
-          </p>
-          <p>
-            I also have experience in blockchain and web development.
-             My ultimate goal is to specialize in Deep Learning Systems (MLSys).
-          </p>
-          <p>
-            I’m always eager to learn and improve—suggestions and mentorship are highly appreciated.
-             Feel free to connect!
-          </p> -->
-
-
+        <div class="intro-bottom intro-content">
             <ScrambleText
-    :className="'m-[7vw] max-w-[800px] font-mono font-medium text-[clamp(14px,4vw,32px)] text-white'"
-    :radius="100"
-    :duration="1.2"
-    :speed="0.5"
-    scrambleChars=".:"
-  >
-          <p>
-            I am a System Programming and AI Research enthusiast. 
-            My current focus is on rCore, rewriting C projects in Rust, and Multi-focus Image Fusion.
-          </p>
-          <p>
-            I also have experience in blockchain and web development.
-             My ultimate goal is to specialize in Deep Learning Systems (MLSys).
-          </p>
-          <p>
-            I’m always eager to learn and improve—suggestions and mentorship are highly appreciated.
-             Feel free to connect!
-          </p>
-  </ScrambleText>
+              :className="'max-w-[800px] font-mono font-medium text-[clamp(14px,4vw,32px)] text-white mx-auto'"
+              :radius="100"
+              :duration="1.2"
+              :speed="0.5"
+              scrambleChars=".:"
+            >
+            <p>
+              I am a System Programming and AI Research enthusiast. 
+              My current focus is on rCore, rewriting C projects in Rust, and Multi-focus Image Fusion.
+            </p>
+            <p>
+              I also have experience in blockchain and web development.
+               My ultimate goal is to specialize in Deep Learning Systems (MLSys).
+            </p>
+            <p>
+              I’m always eager to learn and improve—suggestions and mentorship are highly appreciated.
+               Feel free to connect!
+            </p>
+          </ScrambleText>
         </div>
       </div>
     </section>
@@ -218,10 +199,20 @@ onMounted(() => {
   background-color: var(--vp-c-bg); /* 适配 VitePress 主题色 */
   color: var(--vp-c-text-1);
   position: relative;
-  
 }
 
-/* 噪点叠加层：增加胶片质感 */
+/* 背景层 */
+.ripple-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* 最底层 */
+  /* pointer-events: none; */ /* 暂时注释掉，看是否影响交互 */
+}
+
+/* 噪点叠加层 */
 .noise-overlay {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -234,6 +225,8 @@ onMounted(() => {
 .section {
   padding: 8rem 2rem;
   position: relative;
+  z-index: 1; /* 确保内容在背景之上 */
+  background: transparent; /* 背景透明 */
 }
 
 .container {
@@ -252,18 +245,6 @@ onMounted(() => {
   text-align: center;
   overflow: hidden;
   padding-top: 0; /* 垂直居中 */
-}
-
-/* 蓝色光晕背景 */
-.hero-orb {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-  filter: blur(80px);
-  z-index: 0;
-  pointer-events: none;
 }
 
 .hero-container {
@@ -363,65 +344,49 @@ onMounted(() => {
   background: var(--vp-c-text-3);
 }
 
-/* --- 2. Intro Section (Grid Layout) --- */
-/* 1. Intro Grid 容器：保持默认，不用加 align-items: center，
-   这样 intro-left 和 intro-divider 都会自动拉伸，跟右边一样高 */
+/* --- 2. Intro Section --- */
 .intro-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1.5fr;
-  gap: 4rem;
-  /* 确保这里没有 align-items: start/center，默认是 stretch */
-}
-
-/* 2. 修改左侧容器：使用 Flexbox 让内部的文字垂直居中 */
-.intro-left {
-  /* 关键：设置为 flex 布局 */
   display: flex;
   flex-direction: column;
-  /* 垂直方向居中 */
+  align-items: center;
   justify-content: center;
-  /* 水平方向靠右 */
-  align-items: flex-end; 
-  text-align: right;
-  height: 100%; /* 占满单元格高度 */
+  gap: 3rem;
+  padding: 4rem 0;
 }
 
-/* 3. 去掉 Sticky 效果，还原为普通元素 */
-.sticky-wrapper {
-  /* 重置所有定位属性 */
-  position: static; 
-  top: auto;
-  transform: none;
-}
-
-/* 垂直分割线 */
-.intro-divider {
+.intro-top {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
 }
-.divider-line {
-  width: 1px;
-  height: 100%;
-  min-height: 300px; /* 最小高度防止内容太少时线太短 */
-  background: linear-gradient(to bottom, transparent, var(--vp-c-border), transparent);
+
+.sticky-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .intro-content {
-  padding-top: 1rem;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 0 1rem;
 }
+
 .intro-content p {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--vp-c-text-2);
 }
+
 .highlight {
   color: var(--vp-c-text-1);
   font-weight: 600;
   position: relative;
   display: inline-block;
 }
-/* 下划线装饰 */
 .highlight::after {
   content: '';
   position: absolute;
@@ -456,24 +421,14 @@ onMounted(() => {
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-/* --- 4. Bento Grid --- */
 .bento-grid-wrapper {
   width: 100%;
-}
-
-/* --- 响应式适配 --- */
-@media (max-width: 1024px) {
-  /* 适配逻辑 */
 }
 
 @media (max-width: 768px) {
   .hero-title { font-size: 3.5rem; }
   .intro-grid {
-    grid-template-columns: 1fr; /* 手机单列 */
     gap: 2rem;
   }
-  .intro-left { text-align: left; }
-  .sticky-wrapper { position: static; }
-  .intro-divider { display: none; } /* 手机隐藏分割线 */
 }
 </style>

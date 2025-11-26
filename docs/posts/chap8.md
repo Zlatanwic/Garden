@@ -1,5 +1,5 @@
 ---
-title: " CSAPP Chap8"
+title:  CSAPP Chap8
 date: 2025-11-26 21:40:35
 ---
 
