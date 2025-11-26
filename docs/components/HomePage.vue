@@ -25,7 +25,7 @@ const hobbies = [
   { 
     title: 'Coding', 
     icon: '💻', 
-    description: 'Crafting digital architecture.', 
+    description: 'rust build everything and unix environment advanced programming', 
     label: 'Passion',
     colSpan: 2,
     rowSpan: 2,
@@ -35,7 +35,7 @@ const hobbies = [
   { 
     title: 'Music', 
     icon: '🎵', 
-    description: 'Lo-fi, Jazz & Synths.', 
+    description: 'British rock and hard rock', 
     label: 'Relaxation',
     colSpan: 2,
     rowSpan: 1,
@@ -55,7 +55,7 @@ const hobbies = [
   { 
     title: 'Gaming', 
     icon: '🎮', 
-    description: 'Strategy & RPGs.', 
+    description: 'Rockstar games,CRPGs,ARPGs', 
     label: 'Fun',
     colSpan: 1,
     rowSpan: 1,
@@ -138,14 +138,15 @@ onMounted(() => {
         
         <div class="intro-right intro-content">
           <p>
-            我是一个<span class="highlight">系统编程</span> 和<span class="highlight">人工智能研究</span>爱好者, focusing on building accessible, pixel-perfect user interfaces.
+            i am a <span class="highlight">system programming</span> and <span class="highlight">ai research</span> enthusiast,
+             focusing on learning rCore and rebuilding C project with rust,and multifocus fusion.And I am also know something about block chain and web development.
+             Welcome to communicate with me!
           </p>
           <p>
-            Currently blending the power of <span class="highlight">Vue.js Ecosystem</span> with creative animations to bring static designs to life. 
-            This website is my digital garden where I experiment with new tech.
+            
           </p>
           <p>
-            I believe that <span class="highlight">clean code</span> and thoughtful design are two sides of the same coin.
+            I am still have a lot of things to learn so I aprreiate your guide.
           </p>
         </div>
       </div>
