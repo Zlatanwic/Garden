@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { withBase } from 'vitepress'
 import SplitText from './SplitText.vue'
 import GlitchText from './GlitchText.vue'
 import LogoLoop from './LogoLoop.vue'
@@ -104,7 +105,7 @@ onMounted(() => {
         <p class="hero-desc">Passionate about creating immersive digital experiences and interactive WebGL interfaces.</p>
         
         <div class="hero-ctas">
-          <a href="/posts/" class="btn btn-primary">View Projects</a>
+          <a :href="withBase('/posts/')" class="btn btn-primary">View Projects</a>
           <a href="https://github.com" target="_blank" class="btn btn-ghost">GitHub</a>
         </div>
       </div>

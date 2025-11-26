@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { data as posts } from './posts.data.ts'
 import ElectricBorder from './ElectricBorder.vue'
+import { withBase } from 'vitepress'
 
 function formatDate(date: any) {
   if (!date) return ''
@@ -19,7 +20,7 @@ function formatDate(date: any) {
       <a
         v-for="post in posts"
         :key="post.url"
-        :href="post.url"
+        :href="withBase(post.url)"
         class="post-card-link"
       >
         <ElectricBorder
