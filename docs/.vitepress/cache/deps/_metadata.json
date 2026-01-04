@@ -1,61 +1,61 @@
 {
-  "hash": "eac60d6b",
-  "configHash": "a8360101",
+  "hash": "5779e0d7",
+  "configHash": "eacf3f18",
   "lockfileHash": "355e9e21",
-  "browserHash": "051a1373",
+  "browserHash": "4f13331c",
   "optimized": {
     "vue": {
-      "src": "../../../../node_modules/.pnpm/vue@3.5.25/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "a081a04f",
+      "fileHash": "82ef907e",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@8.0.5/node_modules/@vue/devtools-api/dist/index.js",
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "8f16564a",
+      "fileHash": "33373eb0",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/.pnpm/@vueuse+core@14.0.0_vue@3.5.25/node_modules/@vueuse/core/dist/index.js",
+      "src": "../../../../node_modules/@vueuse/core/dist/index.js",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "3e076a9e",
+      "fileHash": "3f673f9b",
       "needsInterop": false
     },
     "gsap": {
-      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/index.js",
+      "src": "../../../../node_modules/gsap/index.js",
       "file": "gsap.js",
-      "fileHash": "5be8a6d2",
+      "fileHash": "dce870f2",
       "needsInterop": false
     },
     "gsap/ScrollTrigger": {
-      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/ScrollTrigger.js",
+      "src": "../../../../node_modules/gsap/ScrollTrigger.js",
       "file": "gsap_ScrollTrigger.js",
-      "fileHash": "07e14889",
-      "needsInterop": false
-    },
-    "ogl": {
-      "src": "../../../../node_modules/.pnpm/ogl@1.0.11/node_modules/ogl/src/index.js",
-      "file": "ogl.js",
-      "fileHash": "309ded58",
+      "fileHash": "6cca07f7",
       "needsInterop": false
     },
     "gsap/SplitText": {
-      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/SplitText.js",
+      "src": "../../../../node_modules/gsap/SplitText.js",
       "file": "gsap_SplitText.js",
-      "fileHash": "1771e7f6",
+      "fileHash": "91f7042b",
       "needsInterop": false
     },
     "gsap/ScrambleTextPlugin": {
-      "src": "../../../../node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/ScrambleTextPlugin.js",
+      "src": "../../../../node_modules/gsap/ScrambleTextPlugin.js",
       "file": "gsap_ScrambleTextPlugin.js",
-      "fileHash": "07c321e7",
+      "fileHash": "73a1d032",
+      "needsInterop": false
+    },
+    "ogl": {
+      "src": "../../../../node_modules/ogl/src/index.js",
+      "file": "ogl.js",
+      "fileHash": "792f1f1d",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-K6DFPTU5": {
-      "file": "chunk-K6DFPTU5.js"
+    "chunk-TICTUL3T": {
+      "file": "chunk-TICTUL3T.js"
     }
   }
 }

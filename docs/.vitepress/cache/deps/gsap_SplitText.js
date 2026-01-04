@@ -1,4 +1,4 @@
-// node_modules/.pnpm/gsap@3.13.0/node_modules/gsap/SplitText.js
+// node_modules/gsap/SplitText.js
 var gsap;
 var _fonts;
 var _coreInitted;

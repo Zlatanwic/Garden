@@ -1,7 +1,22 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import { data as posts } from './posts.data.ts'
 import ElectricBorder from './ElectricBorder.vue'
 import { withBase } from 'vitepress'
+
+const selectedCategory = ref('All')
+
+const categories = computed(() => {
+  const cats = new Set(posts.map(p => p.category || 'General'))
+  return ['All', ...Array.from(cats)].sort()
+})
+
+const filteredPosts = computed(() => {
+  if (selectedCategory.value === 'All') {
+    return posts
+  }
+  return posts.filter(p => (p.category || 'General') === selectedCategory.value)
+})
 
 function formatDate(date: any) {
   if (!date) return ''
@@ -16,9 +31,21 @@ function formatDate(date: any) {
 <template>
   <div class="post-square">
     <h1 class="page-title">Blog Posts</h1>
+    <div class="category-filter">
+      <button
+        v-for="category in categories"
+        :key="category"
+        class="filter-btn"
+        :class="{ active: selectedCategory === category }"
+        @click="selectedCategory = category"
+      >
+        {{ category }}
+      </button>
+    </div>
+
     <div class="posts-grid">
       <a
-        v-for="post in posts"
+        v-for="post in filteredPosts"
         :key="post.url"
         :href="withBase(post.url)"
         class="post-card-link"
@@ -56,6 +83,37 @@ function formatDate(date: any) {
   margin-bottom: 3rem;
   text-align: center;
   color: var(--vp-c-text-1);
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--vp-c-divider);
+  background: transparent;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  border-color: var(--vp-c-brand);
+  color: var(--vp-c-brand);
+}
+
+.filter-btn.active {
+  background: var(--vp-c-brand);
+  border-color: var(--vp-c-brand);
+  color: white;
 }
 
 .posts-grid {
