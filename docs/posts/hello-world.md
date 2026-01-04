@@ -1,6 +1,9 @@
 ---
 title: Hello World
 date: 2023-10-27
+tags:
+  - demo
+  - test
 excerpt: This is my first post on this new VitePress blog.
 ---
 

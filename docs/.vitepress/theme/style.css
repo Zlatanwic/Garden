@@ -41,23 +41,52 @@
   /* Code Block Styling */
   --vp-code-block-bg: #161616;
   --vp-code-line-highlight-color: rgba(59, 130, 246, 0.1);
+
+  /* Font styling */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
 
 /* Typography refinements */
 .vp-doc h1 {
   background: -webkit-linear-gradient(120deg, var(--vp-c-brand) 30%, var(--vp-c-brand-light));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-top: none;
+  letter-spacing: -0.01em;
 }
 
 .vp-doc a {
   color: var(--vp-c-brand-light);
   text-decoration: none;
   transition: color 0.2s;
+  border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
 }
 
 .vp-doc a:hover {
   color: var(--vp-c-brand);
+  border-bottom-style: solid;
+}
+
+/* Make layout more focused without sidebar */
+.VPContent {
+  padding-top: var(--vp-nav-height) !important;
+}
+
+/* Premium selection */
+::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: inherit;
 }

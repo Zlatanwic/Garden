@@ -1,6 +1,9 @@
 ---
 title: 南大软件分析第一讲
 date: 2026-01-04
+tags:
+  - analysis
+  - study
 excerpt: This is my first post on this new VitePress blog.
 ---
 

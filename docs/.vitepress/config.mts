@@ -10,20 +10,11 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/posts' },
+      { text: 'Tags', link: '/tags' },
       { text: 'About', link: '/about' }
     ],
 
-    sidebar: {
-      '/posts/': [],
-      '/': [
-        {
-          text: 'Recent Posts',
-          items: [
-            { text: 'Hello World', link: '/posts/hello-world' }
-          ]
-        }
-      ]
-    },
+    sidebar: false,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
