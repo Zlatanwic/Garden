@@ -9,6 +9,7 @@ date: 2026-1-10
 ### 如何将汉诺塔问题从递归版本转化为非递归版本
 **程序就是状态机**
 ::: details 查看代码
+```c
 #include <stdio.h>
 #include <assert.h>
 
@@ -87,6 +88,6 @@ int hanoi(int n, char from, char to, char via) {
 
     return retval;
 }
-
+```
 
 :::
