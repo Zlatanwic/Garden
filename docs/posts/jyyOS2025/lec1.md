@@ -89,5 +89,5 @@ int hanoi(int n, char from, char to, char via) {
     return retval;
 }
 ```
-
 :::
+本质来讲，这段代码模拟了一个处理机执行指令的过程，
