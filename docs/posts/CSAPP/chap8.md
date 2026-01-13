@@ -189,7 +189,7 @@ sighandler_t signal(int signum,sighandler_t handler);
 2. handler是`SIG_DFL`,回复`signum`信号为默认行为
 3. handler就是信号处理函数的地址，这个函数被称为`信号处理程序`，一旦接收到这个信号就会调用这个程序。
 
-::: tips
+::: tip 注意
 1. 允许同一个信号处理函数捕获不同类型新的信号
 2. 信号处理程序可以被其他信号中断
 :::
